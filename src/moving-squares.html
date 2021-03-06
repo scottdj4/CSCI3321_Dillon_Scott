@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width, intitial-scale=1.0">
+        <link rel="stylesheet" href="../style/moving-squares.css">
+        
+    </head>
+    <body>
+        <div class="container"  onmouseover="mouseOver()" onmouseout="mouseOut()">
+            <div class="square odd" id="1" onmouseover="mouseOverOdd()" onmouseout="mouseOutOdd()">
+                <p>1</p>
+            </div>
+            <div class="square even" id="2" onmouseover="mouseOverEven()" onmouseout="mouseOutEven()">
+                <p>2</p>
+            </div>
+            <div class="square odd" id="3" onmouseover="mouseOverOdd()" onmouseout="mouseOutOdd()">
+                <p>3</p>
+            </div>
+            <div class="square even" id="4" onmouseover="mouseOverEven()" onmouseout="mouseOutEven()">
+                <p>4</p>
+            </div>
+            <div class="square odd" id="5" onmouseover="mouseOverOdd()" onmouseout="mouseOutOdd()">
+                <p>5</p>
+            </div>
+            <div class="square even" id="6" onmouseover="mouseOverEven()" onmouseout="mouseOutEven()">
+                <p>6</p>
+            </div>
+            <div class="square odd" id="7" onmouseover="mouseOverOdd()" onmouseout="mouseOutOdd()">
+                <p>7</p>
+            </div>
+            <div class="square even" id="8" onmouseover="mouseOverEven()" onmouseout="mouseOutEven()">
+                <p>8</p>
+            </div>
+            <script>
+                var move = null;
+                function mouseOver(){
+                    var evenSquare = document.getElementsByClassName("even");
+                    var oddSquare = document.getElementsByClassName("odd");
+                    var paragraphs = document.getElementsByTagName("p");
+                    var pos = 375;
+                    var rotation = 0;
+                    var evenSize = 50;
+                    var oddSize = 50;
+                    move = setInterval(animateSquare, 10);
+                    function animateSquare(){
+                        if(pos === 125){
+                            clearInterval(move);
+                        }
+                        else{
+                            pos--;
+                            for(var i = 0;i<evenSquare.length;i++){
+                                //document.getElementById("1").style.marginLeft = pos + 'px';
+                                evenSquare[i].style.marginLeft = pos + 'px';
+                                oddSquare[i].style.marginRight = pos + 'px';
+                                if(rotation<=1080){
+                                    evenSquare[i].style.transform = 'rotate('+rotation+'deg)';
+                                    oddSquare[i].style.transform = 'rotate('+(360-rotation)+'deg)';
+
+                                }
+                                if(evenSize<100){
+                                    evenSquare[i].style.width = evenSize + 'px';
+                                    evenSquare[i].style.height = evenSize + 'px';
+                                    
+                                    //paragraphs[i*2].style.lineHeight = evenSize + 'px';
+
+                                    oddSquare[i].style.width = oddSize + 'px';
+                                    oddSquare[i].style.height = oddSize + 'px';
+                                    //paragraphs[i*2+1].style.lineHeight = oddsize + 'px';
+
+                                }
+                            }
+                        }
+                        rotation+=5;
+                        evenSize+=1;
+                        oddSize-=.25;
+                    }
+
+                }
+                function mouseOut(){
+                    clearInterval(move);
+                    var evenSquare = document.getElementsByClassName("even");
+                    var oddSquare = document.getElementsByClassName("odd");
+                    for(var i = 0;i<evenSquare.length;i++){
+                        evenSquare[i].style.marginLeft = 375 + 'px';
+                        oddSquare[i].style.marginRight = 375 + 'px';
+                        evenSquare[i].style.transform = 'rotate(0deg)';
+                        oddSquare[i].style.transform = 'rotate(0deg)';
+                        evenSquare[i].style.width = '50px';
+                        evenSquare[i].style.height = '50px';
+                        oddSquare[i].style.width = '50px';
+                        oddSquare[i].style.height = '50px';
+
+                    }
+
+                        
+                    
+
+                }
+            </script>
+        </div>
+        
+    </body>
+</html>
