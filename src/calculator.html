@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width, intitial-scale=1.0">
+        <link rel="stylesheet" href="../style/calculator.css">
+        
+
+    </head>
+    <body>
+        <div class="container">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" class="textbox" id="txtbox" value="" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="operator btn" id="plus" value="+" onclick="clicks('plus')"></td>
+                    <td><input type="button" class="operator btn" id="minus" value="-" onclick="clicks('minus')"></td>
+                    <td><input type="button" class="operator btn" id="multiply" value="*" onclick="clicks('multiply')"></td>
+                    <td><input type="button" class="btn" id="divide" value="/" onclick="clicks('divide')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" id="one" value="1" onclick="clicks('one')"></td>
+                    <td><input type="button" class="btn" id="two" value="2" onclick="clicks('two')"></td>
+                    <td><input type="button" class="btn" id="three" value="3" onclick="clicks('three')"></td>
+
+                    <td rowspan="3"><input type="button" class="EQbtn" id="calc" value="=" onclick="clicks('calc')"></td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" id="four" value="4" onclick="clicks('four')"></td>
+                    <td><input type="button" class="btn" id="five" value="5" onclick="clicks('five')"></td>
+                    <td><input type="button" class="btn" id="six" value="6" onclick="clicks('six')"></td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" id="seven" value="7" onclick="clicks('seven')"></td>
+                    <td><input type="button" class="btn" id="eight" value="8" onclick="clicks('eight')"></td>
+                    <td><input type="button" class="btn" id="nine" value="9" onclick="clicks('nine')"></td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" class="ACbtn" id="AC" value="AC" onclick="clicks('AC')"></td>
+                    <td><input type="button" class="btn" id="zero" value="0" onclick="clicks('zero')"></td>
+                </tr>
+
+            </table>
+            <script>
+                
+            </script>
+        </div>
+        
+        <script type="text/javascript" src="../scripts/calculator.js"></script>
+    </body>
+</html>
